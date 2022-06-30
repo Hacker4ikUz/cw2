@@ -64,7 +64,6 @@ function reload(arr) {
                     <span>${item.title}</span>
                 </div>
                 <div class="btns">
-                    <img class="prishep" src="./img/prishep.png">
                     <img class="back" src="./img/prev.png">
                     <img class="next" src="./img/next.png">
                     <img class="del" src="./img/del.png">
