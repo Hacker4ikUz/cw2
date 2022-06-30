@@ -162,35 +162,6 @@ function reload(arr) {
                     })
             }
         });
-        // left side menu
-        let menu = document.querySelectorAll('.menu')
-        menu.forEach(menu => {
-            menu.onclick = () => {
-                menus.forEach(elem => {
-                    elem.classList.remove('active')
-                });
-                menu.classList.add('active')
-
-                if (menu.firstChild.nextSibling.lastChild.previousSibling.innerHTML === 'ALL') {
-                    display('block','block','block','block','block' )
-                }
-                if (menu.firstChild.nextSibling.lastChild.previousSibling.innerHTML === 'TODO') {
-                    display('none','block','none','none','none' )
-                }
-                if (menu.firstChild.nextSibling.lastChild.previousSibling.innerHTML === 'PROGRESS') {
-                    display('block','none','none','none','none' )
-                }
-                if (menu.firstChild.nextSibling.lastChild.previousSibling.innerHTML === 'ISSUES') {
-                    display('none','none','block','none','none' )
-                }
-                if (menu.firstChild.nextSibling.lastChild.previousSibling.innerHTML === 'REVIEW') {
-                    display('none','none','none','block','none' )
-                }
-                if (menu.firstChild.nextSibling.lastChild.previousSibling.innerHTML === 'DONE') {
-                    display('none','none','none','none','block' )
-                }
-            }
-        });
         let add = document.querySelectorAll('.add')
         add.forEach(elem => {
             elem.onclick = () => {
