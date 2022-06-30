@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control work</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <img src="./img/logo.png">
+            <h2>Trello</h2>
+        </div>
+        <div class="right">
+            <h2>Tasks: 0/0</h3>
+        </div>
+    </header>
+    <main>
+        <div class="left_side">
+            <div class="menu">
+                <div>
+                    <img src="./img/todo.png">
+                    <h2>TODO</h2>
+                </div>
+                <div>
+                    <h2 class="todolength">0</h2>
+                </div>
+            </div>
+            <div class="menu">
+                <div>
+                    <img src="./img/progress.png">
+                    <h2>PROGRESS</h2>
+                </div>
+                <div>
+                    <h2 class="proglength">0</h2>
+                </div>
+            </div>
+            <div class="menu">
+                <div>
+                    <img src="./img/issues.png">
+                    <h2>ISSUES</h2>
+                </div>
+                <div>
+                    <h2 class="isslength">0</h2>
+                </div>
+            </div>
+            <div class="menu">
+                <div>
+                    <img src="./img/review.png">
+                    <h2>REVIEW</h2>
+                </div>
+                <div>
+                    <h2 class="relength">0</h2>
+                </div>
+            </div>
+            <div class="menu">
+                <div>
+                    <img src="./img/done.png">
+                    <h2>DONE</h2>
+                </div>
+                <div>
+                    <h2 class="donelength">0</h2>
+                </div>
+            </div>
+        </div>
+        <div class="cont">
+            <div class="todo_box">
+                <div class="name">
+                    <h3>TODO</h3>
+                    <span>0</span>
+                </div>
+                <div class="todos_cont">
+                    
+                </div>
+                <br>
+                <span class="add">+ Add a card</span>
+            </div>
+            <div class="progress_box">
+                <div class="name">
+                    <h3>PROGRESS</h3>
+                    <span>0</span>
+                </div>
+                <div class="progress_cont">
+                    
+                </div>
+                <br>
+                <span class="add">+ Add a card</span>
+            </div>
+            <div class="issues_box">
+                <div class="name">
+                    <h3>ISSUES</h3>
+                    <span>0</span>
+                </div>
+                <div class="issues_cont">
+
+                </div>
+                <br>
+                <span class="add">+ Add a card</span>
+            </div>
+            <div class="review_box">
+                <div class="name">
+                    <h3>REVIEW</h3>
+                    <span>0</span>
+                </div>
+                <div class="review_cont">
+                    
+                </div>
+                <br>
+                <span class="add">+ Add a card</span>
+            </div>
+            <div class="done_box">
+                <div class="name">
+                    <h3>DONE</h3>
+                    <span>0</span>
+                </div>
+                <div class="done_cont">
+                </div>
+                <br>
+                <span class="add">+ Add a card</span>
+            </div>
+        </div>
+    </main>
+
+    <div class="background"></div>
+    <div class="modal">
+        <form name="add">
+            <input type="text" placeholder="Title" name="title">
+            <textarea name="description" placeholder="Description"></textarea>
+            <div class="status">
+                <h4>Status:</h4>
+                <select name="status">
+                    <option value="todo">TODO</option>
+                    <option value="progress">PROGRESS</option>
+                    <option value="issues">ISSUES</option>
+                    <option value="review">REVIEW</option>
+                    <option value="done">DONE</option>
+                </select>
+            </div>
+            <div class="btns">
+                <button>Сохранить</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/edit.css">
+    <title>Edit Item</title>
+</head>
+
+<body>
+    <form name="edit">
+        <input type="text" placeholder="TITLE" name="title">
+        <textarea name="description" placeholder="DESCRIPTION"></textarea>
+        <div class="status">
+            <h4>Статус:</h4>
+            <select name="status">
+                <option value="todo">TODO</option>
+                <option value="progress">PROGRESS</option>
+                <option value="issues">ISSUES</option>
+                <option value="review">REVIEW</option>
+                <option value="done">DONE</option>
+            </select>
+        </div>
+        <div class="btns">
+            <button>Сохранить</button>
+            <span class="clear">Очистить</span>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        let url = 'https://vast-depths-87306.herokuapp.com/todos'
+
+        axios.get(url)
+            .then(res => {
+                if (res.status === 200 || res.status === 201) {
+                    filterCards(res.data.data)
+                }
+
+            })
+
+        function filterCards(arr) {
+            let id = window.location.href.split('#')
+            id = id[id.length - 1]
+
+            let finded = arr.find(elem => elem._id === id)
+
+            let input = document.querySelector('input')
+            let textarea = document.querySelector('textarea')
+            let select = document.querySelector('select')
+
+            input.value = finded.title
+            textarea.value = finded.description
+            select.value = finded.status
+
+        }
+        let edit = document.forms.edit
+
+
+
+        edit.onsubmit = (e) => {
+            e.preventDefault()
+            submit()
+        }
+
+        function submit() {
+            let card = {
+                deadline: "29.06",
+                time: "16:30"
+            }
+
+            let fm = new FormData(edit)
+
+            fm.forEach((value, key) => {
+                card[key] = value
+            });
+            let id = window.location.href.split('#')
+            id = id[id.length - 1]
+
+            axios.patch(`${url}/${id}`, card)
+                .then(res => {
+                    alert('card is edited successfuly')
+                })
+      
+        }
+    </script>
+</body>
+</html>
